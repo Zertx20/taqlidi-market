@@ -8,19 +8,20 @@ export const AnimatedBackground = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-emerald-50/30 via-transparent to-amber-50/30"></div>
       </div>
       
-      {/* Large Floating Orbs */}
+      {/* Large Floating Orbs - Optimized */}
       <motion.div
         animate={{
-          x: [0, 150, -100, 0],
-          y: [0, -80, 60, 0],
-          scale: [1, 1.2, 0.9, 1],
+          x: [0, 100, -50, 0],
+          y: [0, -40, 30, 0],
+          scale: [1, 1.1, 0.95, 1],
         }}
         transition={{
-          duration: 25,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-amber-300/50 via-orange-300/40 to-yellow-200/30 rounded-full blur-3xl"
+        className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-amber-200/40 to-orange-200/30 rounded-full blur-3xl"
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         animate={{
@@ -29,26 +30,28 @@ export const AnimatedBackground = () => {
           scale: [1, 0.8, 1.3, 1],
         }}
         transition={{
-          duration: 30,
+          duration: 20,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 5
+          delay: 3
         }}
         className="absolute top-40 right-20 w-[500px] h-[500px] bg-gradient-to-br from-teal-300/50 via-emerald-300/40 to-cyan-200/30 rounded-full blur-3xl"
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         animate={{
-          x: [0, 80, -120, 0],
-          y: [0, -40, 80, 0],
-          scale: [1, 1.4, 0.7, 1],
+          x: [0, 60, -80, 0],
+          y: [0, -30, 50, 0],
+          scale: [1, 1.2, 0.9, 1],
         }}
         transition={{
-          duration: 35,
+          duration: 18,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 10
+          delay: 6
         }}
         className="absolute bottom-20 left-1/3 w-[450px] h-[450px] bg-gradient-to-br from-orange-300/40 via-amber-300/50 to-yellow-200/40 rounded-full blur-3xl"
+        style={{ willChange: 'transform' }}
       />
       
       {/* Medium Floating Elements */}

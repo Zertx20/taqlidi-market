@@ -46,11 +46,15 @@ export default function HomePage() {
       <section 
         className="relative h-[70vh] sm:h-[85vh] flex items-center justify-center overflow-hidden"
       >
-        {/* Background Image */}
+        {/* Background Image with lazy loading */}
         <div 
           className="absolute inset-0 bg-cover bg-center scale-110"
           style={{
-            backgroundImage: `url('https://readdy.ai/api/search-image?query=Elegant%20flat%20lay%20display%20of%20traditional%20Algerian%20Taqlidi%20clothing%20garments%20featuring%20luxurious%20embroidered%20kaftan%20and%20burnous%20laid%20out%20beautifully%20on%20soft%20fabric%20surface%20with%20intricate%20golden%20embroidery%20patterns%20delicate%20traditional%20motifs%20in%20warm%20cream%20beige%20champagne%20gold%20and%20deep%20emerald%20green%20colors%20showcasing%20refined%20North%20African%20craftsmanship%20on%20flowing%20silk%20and%20wool%20textiles%20with%20gentle%20natural%20lighting%20ethereal%20minimalist%20composition%20highlighting%20cultural%20heritage%20no%20people%20no%20faces%20only%20clothing%20items&width=1920&height=1080&seq=hero-taqlidi-garments-only-v2&orientation=landscape')`
+            backgroundImage: `url('https://readdy.ai/api/search-image?query=Elegant%20flat%20lay%20display%20of%20traditional%20Algerian%20Taqlidi%20clothing%20garments%20featuring%20luxurious%20embroidered%20kaftan%20and%20burnous%20laid%20out%20beautifully%20on%20soft%20fabric%20surface%20with%20intricate%20golden%20embroidery%20patterns%20delicate%20traditional%20motifs%20in%20warm%20cream%20beige%20champagne%20gold%20and%20deep%20emerald%20green%20colors%20showcasing%20refined%20North%20African%20craftsmanship%20on%20flowing%20silk%20and%20wool%20textiles%20with%20gentle%20natural%20lighting%20ethereal%20minimalist%20composition%20highlighting%20cultural%20heritage%20no%20people%20no%20faces%20only%20clothing%20items&width=1920&height=1080&seq=hero-taqlidi-garments-only-v2&orientation=landscape')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }}
         />
         
@@ -81,30 +85,33 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center text-white px-4 sm:px-8 max-w-6xl mx-auto">
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 sm:mb-8 leading-tight text-white drop-shadow-2xl"
             style={{
-              textShadow: '0 4px 6px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.2)'
+              textShadow: '0 4px 6px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.2)',
+              willChange: 'transform, opacity'
             }}
           >
             {t('home.hero.title')}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-white/95 max-w-4xl mx-auto leading-relaxed"
+            style={{ willChange: 'transform, opacity' }}
           >
             {t('home.hero.subtitle')}
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            style={{ willChange: 'transform' }}
           >
             <Link
               to="/products"
